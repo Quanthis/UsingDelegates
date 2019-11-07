@@ -41,6 +41,8 @@ namespace UsingDelegates
 
             Stopwatch z1 = new Stopwatch();
             Stopwatch z2 = new Stopwatch();
+            Stopwatch z3 = new Stopwatch();
+            Stopwatch z4 = new Stopwatch();
             
             ThreadMaker s1 = Silnia;
 
@@ -71,6 +73,16 @@ namespace UsingDelegates
             t2.Join();
             z2.Stop();
             WriteLine("Z delegatem wyliczono w: " + z2.Elapsed);
+
+            WriteLine("z3 startuje");
+            z3.Start();
+            Silnia(100000);
+            WriteLine("z3: " + z3.Elapsed);
+
+            WriteLine("z4 startuje");                   //+delegat
+            z4.Start();
+            s1(100000);
+            WriteLine("z4: " + z4.Elapsed);
 
             ReadKey();
         }
