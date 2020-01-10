@@ -18,18 +18,29 @@ namespace UsingDelegates
         }
 
 
-
-
-        public delegate void Del(string s);
+        /*public delegate void Del(string s);
         public static void DelMethod(string s)
         {
             WriteLine(s);
+        }*/
+
+
+
+        public delegate void TDel(int number);
+        public static void TMaker(int number)
+        {
+            Thread t1 = new Thread(() => Silnia(number));
         }
+
+      
 
         static void Main(string[] args)
         {
-            Del handler = DelMethod;
-            handler("print sth");
+            /*Del handler = DelMethod;
+            handler("print sth");*/
+            TDel del = TDel;
+            TDel(10);
+
         }
     }
 }
